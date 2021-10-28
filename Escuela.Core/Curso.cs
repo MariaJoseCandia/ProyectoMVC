@@ -4,6 +4,7 @@ namespace Escuela.Core
 {
     public class Curso
     {
+        public int Id { get; set; }
         public byte Anio { get; set; }
         public byte Division { get; set; }
         public string Turno { get; set; }
