@@ -9,19 +9,23 @@
 </head>
 <body>
     
-    <h5>Curso</h5>
+    <h2>Curso</h2>
 
     <table>
         <thead>
-            <tr><td>Nombre</td> <td>Apellido</td></tr>
+            <tr> 
+                <td>Año</td> 
+                <td>Division</td> 
+                <td>Turno</td> 
+            </tr>
         </thead>
         <tbody>
             @foreach (Escuela.Core.Curso curso in Model)
             {
                 <tr>
-                    <td>
-                        <a asp-controller="Curso" asp-action="Detalle" asp-route-id="@curso.Id">@curso.Division</a>
-                    </td>
+                    <td><a asp-controller="Curso" asp-action="Detalle" asp-route-id="@curso.Id">@curso.Anio</a></td>
+                    <td><a asp-controller="Curso" asp-action="Detalle" asp-route-id="@curso.Id">@curso.Division</a></td>
+                    <td><a asp-controller="Curso" asp-action="Detalle" asp-route-id="@curso.Id">@curso.Turno</a></td>
                 </tr>
             }
         </tbody>

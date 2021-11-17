@@ -1,0 +1,42 @@
+@model Escuela.Mvc.ViewModels.VMAlumno;
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Alumno</title>
+</head>
+<body>
+    <form asp-action="FormAlta" method ="post">
+        <div asp-validation-summary="All"></div>
+        
+        <div>
+            <label asp-for="@Model.Alumno.Nombre">Nombre:</label>
+            <input asp-for="@Model.Alumno.Nombre" />
+        </div>
+
+        <div>
+            <label asp-for="@Model.Alumno.Apellido">Apellido:</label>
+            <input asp-for="@Model.Alumno.Apellido" />
+        </div>
+
+        <div>
+            <label asp-for="@Model.Alumno.DNI">DNI:</label>
+            <input asp-for="@Model.Alumno.DNI" />
+        </div>
+
+        <div>
+            <select asp-for="idCurso">
+                <option value="">Elegi una opción</option>
+                @foreach (Escuela.Core.Curso curso in Model.Curso)
+                {
+                    <option value="@curso.Id">@curso.Division</option>
+                }
+            </select>
+        </div>
+
+        <button type="submit">Alta Alumno</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,31 @@
+@model IEnumerable<Escuela.Core.Alumno>
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alumno</title>
+</head>
+<body>
+    
+    <h2>Alumno</h2>
+    <table>
+        <thead>
+            <tr>  
+                <td>Nombre</td> 
+                <td>Apellido</td> 
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Escuela.Core.Alumno alumno in Model)
+            {
+                <tr>
+                    <td><a asp-controller="Alumno" asp-action="Detalle" asp-route-id="@alumno.Id">@alumno.Nombre</a></td>
+                    <td><a asp-controller="Alumno" asp-action="Detalle" asp-route-id="@alumno.Id">@alumno.Apellido</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>

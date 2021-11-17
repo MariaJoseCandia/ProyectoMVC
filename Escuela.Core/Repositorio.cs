@@ -8,8 +8,8 @@ namespace Escuela.Core
         static int idFalta = 1;
         static int idCurso = 1;
         static int idAlumno = 1;
-        public static List<Curso> Curso { get; set; } 
-        public static List<Alumno> Alumno { get; set; }
+        public static List<Curso> Curso { get; set; } = new List<Curso>();
+        public static List<Alumno> Alumno { get; set; } = new List<Alumno>();
         public static List<Falta> Falta { get; set;}
         public static void AgregarCurso(Curso curso)
         {

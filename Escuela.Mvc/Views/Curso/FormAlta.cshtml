@@ -10,10 +10,22 @@
 <body>
     <form asp-action="FormAlta" method ="post">
         <div asp-validation-summary="All"></div>
+        
+        <div>
+            <label asp-for="Anio">Año:</label>
+            <input asp-for="Anio" />
+        </div>
+
         <div>
             <label asp-for="Division">Division:</label>
             <input asp-for="Division" />
         </div>
+
+         <div>
+            <label asp-for="Turno">Turno:</label>
+            <input asp-for="Turno" />
+        </div>
+        
         <button type="submit">Alta Curso</button>
     </form>
 </body>
