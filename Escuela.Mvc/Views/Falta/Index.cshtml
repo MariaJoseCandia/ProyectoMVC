@@ -1,0 +1,31 @@
+@model IEnumerable<Escuela.Core.Falta>
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Falta</title>
+</head>
+<body>
+    
+    <h2>Falta</h2>
+    <table>
+        <thead>
+            <tr>  
+                <td>Alumno</td> 
+                <td>Falta</td> 
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Escuela.Core.Falta falta in Model)
+            {
+                <tr>
+                    <td><a asp-controller="Falta" asp-action="Detalle" asp-route-id="@falta.Id">@falta.Alumno</a></td>
+                    <td><a asp-controller="Falta" asp-action="Detalle" asp-route-id="@falta.Id">@falta.ValorFalta</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>

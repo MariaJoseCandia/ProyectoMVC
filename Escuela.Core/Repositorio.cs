@@ -9,8 +9,11 @@ namespace Escuela.Core
         static int idCurso = 1;
         static int idAlumno = 1;
         public static List<Curso> Curso { get; set; } = new List<Curso>();
+        public static IEnumerable<Curso> Cursos => Curso;
         public static List<Alumno> Alumno { get; set; } = new List<Alumno>();
+        public static IEnumerable<Alumno> Alumnos => Alumno;
         public static List<Falta> Falta { get; set;}
+        public static IEnumerable<Falta> Faltas => Falta;
         public static void AgregarCurso(Curso curso)
         {
             curso.Id = idCurso++;

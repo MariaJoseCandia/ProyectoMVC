@@ -7,7 +7,7 @@ namespace Escuela.Mvc.ViewModels
     {
         public IEnumerable<Curso> Cursos { get; set; }
         public Alumno Alumno { get; set; }
-        public int? IdCurso { get; set; }
+        public int? IdCursoSeleccionado { get; set; }
         public VMAlumno() => Alumno = new Alumno();
         public VMAlumno(IEnumerable<Curso> cursos) : this()
             => Cursos = cursos;

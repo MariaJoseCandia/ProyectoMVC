@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Escuela.Core;
+using Escuela.Mvc.ViewModels;
 
 namespace Escuela.Controllers
 {
@@ -10,7 +11,14 @@ namespace Escuela.Controllers
          => View(Repositorio.Alumno); 
 
         [HttpGet]
-        public IActionResult FormAlta() => View();
+        public IActionResult FormAlta(int? idCurso)
+        {
+            var vmAlumno = new VMAlumno(Repositorio.Cursos)
+            {
+                IdCursoSeleccionado = idCurso
+            };
+            return View(vmAlumno);
+        }
 
         [HttpPost]
         public IActionResult FormAlta(Alumno alumno)

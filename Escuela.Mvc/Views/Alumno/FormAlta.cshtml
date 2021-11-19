@@ -3,7 +3,7 @@
     Layout = null;
 }
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <title>Alumno</title>
 </head>
@@ -25,13 +25,13 @@
             <label asp-for="@Model.Alumno.DNI">DNI:</label>
             <input asp-for="@Model.Alumno.DNI" />
         </div>
-
+    
         <div>
-            <select asp-for="idCurso">
-                <option value="">Elegi una opción</option>
-                @foreach (Escuela.Core.Curso curso in Model.Curso)
+            <select asp-for="IdCursoSeleccionado">
+                <option value="">Elegi un curso</option>
+                @foreach (Escuela.Core.Curso curso in Model.Cursos)
                 {
-                    <option value="@curso.Id">@curso.Division</option>
+                    <option value="@curso.Id">@curso.Anio</option>
                 }
             </select>
         </div>
