@@ -31,12 +31,17 @@
                 <option value="">Elegi un curso</option>
                 @foreach (Escuela.Core.Curso curso in Model.Cursos)
                 {
-                    <option value="@curso.Id">@curso.Anio</option>
+                    <option value="@curso.Id">@curso.Anio ° @curso.Division °</option>
                 }
             </select>
         </div>
 
         <button type="submit">Alta Alumno</button>
     </form>
+
+    <button>
+    <a asp-controller="" asp-action="Index">Inicio</a>
+    </button>
+    
 </body>
 </html>

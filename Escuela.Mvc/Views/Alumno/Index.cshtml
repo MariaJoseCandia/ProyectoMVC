@@ -24,9 +24,15 @@
                 <tr>
                     <td><a asp-controller="Alumno" asp-action="Detalle" asp-route-id="@alumno.Id">@alumno.Nombre</a></td>
                     <td><a asp-controller="Alumno" asp-action="Detalle" asp-route-id="@alumno.Id">@alumno.Apellido</a></td>
+                    <td><a asp-controller="Alumno" asp-action="Detalle" asp-route-id="@alumno.Id">@alumno.curso.Anio ° @alumno.curso.Division °</a></td>
                 </tr>
             }
         </tbody>
     </table>
+
+    <button>
+    <a asp-controller="" asp-action="Index">Inicio</a>
+    </button>
+    
 </body>
 </html>

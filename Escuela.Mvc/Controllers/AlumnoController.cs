@@ -8,23 +8,22 @@ namespace Escuela.Controllers
     {
         [HttpGet]
         public IActionResult Index()
-         => View(Repositorio.Alumno); 
+         => View(Repositorio.Alumno);
 
         [HttpGet]
-        public IActionResult FormAlta(int? idCurso)
+        public IActionResult FormAlta()
         {
-            var vmAlumno = new VMAlumno(Repositorio.Cursos)
-            {
-                IdCursoSeleccionado = idCurso
-            };
+            var vmAlumno = new VMAlumno(Repositorio.Cursos);
             return View(vmAlumno);
         }
 
         [HttpPost]
-        public IActionResult FormAlta(Alumno alumno)
+        public IActionResult FormAlta(VMAlumno vMAlumno)
         {
-            Repositorio.AgregarAlumno(alumno);
-            return View("Index", Repositorio.Alumno);
+            var curso = Repositorio.GetCurso(vMAlumno.IdCursoSeleccionado.Value);
+            vMAlumno.Alumno.curso = curso;
+            Repositorio.AgregarAlumno(vMAlumno.Alumno);
+            return RedirectToAction("Index");
         }
 
     }
