@@ -1,0 +1,25 @@
+@model Escuela.Core.Curso
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Alumno - Detalle @Model.Curso</title>
+</head>
+<body>
+    <a asp-controller="Alumno" asp-action="FormAlta" asp-route-idCurso="@Model.Id">Alta Alumno</a> <br />
+    <h5>Alumno</h5>
+    <table>
+        <thead>
+            <tr>
+                <td>Nombre</td>
+                <td>Apellido</td>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+</body>
+</html>
